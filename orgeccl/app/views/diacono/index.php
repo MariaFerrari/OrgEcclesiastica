@@ -34,5 +34,5 @@ global $data;
 </div>
 <div align="center">
 <button class="button">Parrocchie con la puzza sotto il naso</button>
-<button class="button">Funzioni celebrate da un vescovo in una parrocchia</button>
+<a href="<?=$data['base_path'];?>/diacono/scegli"><button class="button">Funzioni celebrate da un vescovo in una parrocchia</button></a>
 </div>
