@@ -92,3 +92,17 @@ function model_diacono_personeGenNoParrocchia($idParrocchia){
 
   return $data;
 }
+
+function model_diacono_persona($idPersona){
+  $conn=db_connect();
+
+  $sql="SELECT p.*,pa.Nome as ParrocchiaPersona,paMad.Nome AS ParrocchiaMadre, paPad.Nome as ParrocchiaPadre, mad.Nome as NomeMadre, mad.Cognome as CognomeMadre, mad.IdParrocchia as IdParrocchiaMadre, pad.Nome as NomePadre, pad.Cognome as CognomePadre, pad.IdParrocchia as IdParrocchiaPadre FROM persona p INNER JOIN persona mad ON p.Madre=mad.IdPersona INNER JOIN persona pad ON p.Padre=pad.IdPersona INNER JOIN parrocchia pa ON p.IdParrocchia=pa.IdParrocchia  INNER JOIN parrocchia paMad ON mad.IdParrocchia=paMad.IdParrocchia  INNER JOIN parrocchia paPad ON pad.IdParrocchia=paPad.IdParrocchia WHERE p.IdPersona=$idPersona";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC)[0];
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}
