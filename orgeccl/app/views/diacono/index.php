@@ -18,8 +18,8 @@ global $data;
                     <span style="font-family:'Abel','Arial';font-size:1.429em;">RICERCA FUNZIONI</span>
                     </p>
                     <p style="margin:0.36em 0em 1.43em 0em;text-align:Center;line-height:2.11267605633803;">
-                    <span style="font-family:'Abel','Arial';font-size:1.143em;">Funzione con maggior numero di partecipanti.</span></p><p style="margin:0.36em 0em 0em 0em;text-align:Center;line-height:2.11267605633803;">
-                    <span><a HREF="" target="_self" class="btn btn-md btn-default">Vai alla pagina</a></span>
+                    <span style="font-family:'Abel','Arial';font-size:1.143em;">Diocesi della Parrocchia della la Funzione con maggior numero di partecipanti.</span></p><p style="margin:0.36em 0em 0em 0em;text-align:Center;line-height:2.11267605633803;">
+                    <span><a HREF="<?=$data['base_path'];?>/diacono/funzmax" target="_self" class="btn btn-md btn-default">Vai alla pagina</a></span>
                 </p>
             </div>
             <div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>

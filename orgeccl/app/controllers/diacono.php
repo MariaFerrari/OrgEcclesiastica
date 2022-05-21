@@ -13,3 +13,9 @@ function controller_diacono_scegli()
     $data['rows'] = model_diacono_scegli();
     view_render_html();
 }
+function controller_diacono_funzmax()
+{
+    global $data;
+    $data['rows'] = model_diacono_funzmax();
+    view_render_html();
+}
