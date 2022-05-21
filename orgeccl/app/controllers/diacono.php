@@ -38,3 +38,9 @@ function controller_diacono_parrocchia($id)
     $data['rows'] = model_diacono_parrocchia($id);
     view_render_html();
 }
+function controller_diacono_personeGenNoParrocchia($id)
+{
+    global $data;
+    $data['rows'] = model_diacono_personeGenNoParrocchia($id);
+    view_render_html();
+}

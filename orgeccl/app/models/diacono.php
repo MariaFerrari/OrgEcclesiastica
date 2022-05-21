@@ -78,3 +78,17 @@ function model_diacono_parrocchia($idParrocchia){
 
   return $data;
 }
+
+function model_diacono_personeGenNoParrocchia($idParrocchia){
+  $conn=db_connect();
+
+  $sql="SELECT * FROM persona WHERE IdParrocchia=$idParrocchia AND (Padre NOT IN (SELECT IdPersona FROM persona WHERE IdParrocchia=$idParrocchia) OR Madre NOT IN (SELECT IdPersona FROM persona WHERE IdParrocchia=$idParrocchia)) ORDER BY Cognome, Nome";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC);
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}
