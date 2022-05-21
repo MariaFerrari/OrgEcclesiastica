@@ -32,3 +32,9 @@ function controller_diacono_scegliParrocchia()
     $data['rows'] = model_diacono_scegliParrocchia();
     view_render_html();
 }
+function controller_diacono_parrocchia($id)
+{
+    global $data;
+    $data['rows'] = model_diacono_parrocchia($id);
+    view_render_html();
+}

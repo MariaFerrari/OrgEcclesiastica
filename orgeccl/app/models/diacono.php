@@ -64,3 +64,17 @@ function model_diacono_scegliParrocchia(){
 
   return $data;
 }
+
+function model_diacono_parrocchia($idParrocchia){
+  $conn=db_connect();
+
+  $sql="SELECT p.*, c.Nome as NomeComune, c.Provincia, d.Nome as NomeDiocesi FROM parrocchia p INNER JOIN comune c ON p.IdComune=c.IdComune INNER JOIN Diocesi d ON p.IdDiocesi=d.IdDiocesi WHERE p.idParrocchia=$idParrocchia";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC)[0];
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}
