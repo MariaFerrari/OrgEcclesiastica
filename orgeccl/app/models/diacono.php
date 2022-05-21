@@ -36,3 +36,17 @@ function model_diacono_funzmax(){
 
   return $data;
 }
+
+function model_diacono_funzione($idFunzione){
+  $conn=db_connect();
+
+  $sql="SELECT f.*, r.Tipo as NomeRito FROM funzione f INNER JOIN rito r ON f.IdRito=r.IdRito WHERE f.IdFunzione=$idFunzione ";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC)[0];
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}

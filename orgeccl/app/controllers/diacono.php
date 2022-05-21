@@ -19,3 +19,9 @@ function controller_diacono_funzmax()
     $data['rows'] = model_diacono_funzmax();
     view_render_html();
 }
+function controller_diacono_funzione($id)
+{
+    global $data;
+    $data['rows'] = model_diacono_funzione($id);
+    view_render_html();
+}
