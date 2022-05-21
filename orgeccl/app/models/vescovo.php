@@ -23,13 +23,10 @@ function model_vescovo_all(){
     return $data;
   }
 
-function model_vescovo_funzioni($dataOra, $nome, $cognome){
+function model_vescovo_funzioni($dataOra, $IdVescovo){
   $conn=db_connect();
 
-  $nome =  $conn->real_escape_string($nome);
-  $cognome =  $conn->real_escape_string($cognome);
-
-  $sql="SELECT f.GiornoOra, p.Nome, f.Tipo FROM funzione f INNER JOIN parrocchia p ON f.IdParrocchia=p.IdParrocchia WHERE CAST(f.GiornoOra AS DATE) = '$dataOra' AND f.IdVescovo = (SELECT IdVescovo FROM vescovo WHERE Nome LIKE '$nome' AND Cognome LIKE '$cognome') GROUP BY f.GiornoOra, p.Nome, f.Tipo";
+  $sql="SELECT f.GiornoOra, p.Nome, f.Tipo FROM funzione f INNER JOIN parrocchia p ON f.IdParrocchia=p.IdParrocchia WHERE CAST(f.GiornoOra AS DATE) = '$dataOra' AND f.IdVescovo = $IdVescovo GROUP BY f.GiornoOra, p.Nome, f.Tipo";
 
   $result=$conn->query($sql);
   $data=$result->fetch_all(MYSQLI_ASSOC);

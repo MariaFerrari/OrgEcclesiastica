@@ -23,13 +23,10 @@ function model_sacerdote_all(){
     return $data;
   }
 
-function model_sacerdote_diaconi($nome, $cognome){
+function model_sacerdote_diaconi($IdSacerdote){
   $conn=db_connect();
 
-  $nome =  $conn->real_escape_string($nome);
-  $cognome =  $conn->real_escape_string($cognome);
-
-  $sql="SELECT Nome, Cognome FROM diacono WHERE IdDiacono IN (SELECT a.IdDiacono FROM assistenza a INNER JOIN celebrazione c ON a.IdFunzione=c.IdFunzione WHERE c.IdSacerdote = (SELECT IdSacerdote FROM sacerdote WHERE nome LIKE '$nome' AND cognome LIKE '$cognome') GROUP BY a.IdDiacono HAVING COUNT(a.IdDiacono) > 1) ORDER BY Cognome, Nome";
+  $sql="SELECT Nome, Cognome FROM diacono WHERE IdDiacono IN (SELECT a.IdDiacono FROM assistenza a INNER JOIN celebrazione c ON a.IdFunzione=c.IdFunzione WHERE c.IdSacerdote = $IdSacerdote GROUP BY a.IdDiacono HAVING COUNT(a.IdDiacono) > 1) ORDER BY Cognome, Nome";
 
   $result=$conn->query($sql);
   $data=$result->fetch_all(MYSQLI_ASSOC);

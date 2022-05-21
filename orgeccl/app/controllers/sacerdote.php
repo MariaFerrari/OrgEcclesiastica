@@ -1,6 +1,10 @@
 <?php
 require '../app/models/sacerdote.php';
 
+function controller_sacerdote_home()
+{
+    view_render_html();
+}
 function controller_sacerdote_all()
 {
     global $data;
@@ -10,14 +14,14 @@ function controller_sacerdote_all()
 function controller_sacerdote_ricerca()
 {
     global $data;
+    $data['rows'] = model_sacerdote_all();
     view_render_html();
 }
 function controller_sacerdote_diaconi()
 {
-    $nome = isset($_POST['nome'])?$_POST['nome']:'Angelo Fiorenzo';
-    $cognome = isset($_POST['cognome'])?$_POST['cognome']:'Bertolotti';
+    $IdSacerdote = isset($_GET['IdSacerdote'])?$_GET['IdSacerdote']:'21';
 
     global $data;
-    $data['rows'] = model_sacerdote_diaconi($nome, $cognome);
+    $data['rows'] = model_sacerdote_diaconi($IdSacerdote);
     view_render_html();
 }
