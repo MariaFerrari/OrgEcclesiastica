@@ -9,10 +9,16 @@ function db_connect(){
   return $mysqli;
 }
 
-function model_sacerdote_all(){
+function model_sacerdote_all($pagina = 0){
     $conn=db_connect();
-  
-    $sql="SELECT * FROM sacerdote";
+
+    if($pagina != 0){
+      $count = ($pagina-1)*25;
+      $sql="SELECT * FROM sacerdote LIMIT $count,25";
+    }
+    else{
+      $sql="SELECT * FROM sacerdote";
+    }
   
     $result=$conn->query($sql);
     $data=$result->fetch_all(MYSQLI_ASSOC);

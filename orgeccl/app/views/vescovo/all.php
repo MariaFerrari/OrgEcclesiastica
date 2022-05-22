@@ -11,7 +11,6 @@
     <th>Nome</th>
     <th>Cognome</th>
     <th>Data di nascita</th>
-    <th>Link</th>
   </tr>
   <?php
   foreach ($vescovi as $vescovo) {
@@ -20,7 +19,6 @@
     <td><?=$vescovo['Nome'];?></td>
     <td><?=$vescovo['Cognome'];?></td>
     <td><?=$vescovo['DataN'];?></td>
-    <td><a href="/orgeccl/vescovo/dettaglio/<?=$vescovo['IdVescovo'];?>">Dettagli</a></td>
     </tr>
   <?php
   }

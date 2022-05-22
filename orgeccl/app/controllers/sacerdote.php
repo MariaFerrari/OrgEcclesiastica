@@ -5,10 +5,11 @@ function controller_sacerdote_home()
 {
     view_render_html();
 }
-function controller_sacerdote_all()
+function controller_sacerdote_all($pagina)
 {
     global $data;
-    $data['rows'] = model_sacerdote_all();
+    $data['rows'] = model_sacerdote_all($pagina);
+    $data['pagina'] = $pagina;
     view_render_html();
 }
 function controller_sacerdote_ricerca()

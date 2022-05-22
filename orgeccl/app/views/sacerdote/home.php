@@ -8,7 +8,7 @@
             <div class="html_content">
                 <p style="margin:0.36em 0em 2.14em 0em;text-align:Center;">
                     <span class="ttr_image" style="float:none;display:block;text-align:center;overflow:hidden;margin:0em 0em 2.86em 0em;">
-                        <span><img class="ttr_uniform" src="/orgeccl/assets/images/2.png" style="max-width:800px;max-height:479px;" /></span>
+                        <span><img class="ttr_uniform" src="/orgeccl/assets/images/diacono-01.png" style="max-width:800px;max-height:120px" /></span>
                     </span>
                     <span style="font-family:'Abel','Arial';font-size:1.429em;">RICERCA DIACONI</span>
                     </p>
@@ -28,13 +28,13 @@
             <div class="html_content">
             <p style="margin:0.36em 0em 2.14em 0em;text-align:Center;">
                     <span class="ttr_image" style="float:none;display:block;text-align:center;overflow:hidden;margin:0em 0em 2.86em 0em;">
-                        <span><img class="ttr_uniform" src="/orgeccl/assets/images/blank.jpg" style="max-width:800px;max-height:479px;" /></span>
+                        <span><img class="ttr_uniform" src="/orgeccl/assets/images/sacerdote-01.png" style="max-width:800px;max-height:120px;" /></span>
                     </span>
                     <span style="font-family:'Abel','Arial';font-size:1.429em;">VISUALIZZA SACERDOTI</span>
                 </p>
                 <p style="margin:0.36em 0em 2.14em 0em;text-align:Center;line-height:2.11267605633803;">
                     <span style="font-family:'Abel','Arial';font-size:1.143em;">Visualizza tutti i sacerdoti.</span></p><p style="margin:0.36em 0em 0em 0em;text-align:Center;line-height:2.11267605633803;">
-                    <span><a HREF="/orgeccl/sacerdote/all" target="_self" class="btn btn-md btn-default">Vai alla pagina</a></span>
+                    <span><a HREF="/orgeccl/sacerdote/all/1" target="_self" class="btn btn-md btn-default">Vai alla pagina</a></span>
                 </p>
             </div>
             <div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>

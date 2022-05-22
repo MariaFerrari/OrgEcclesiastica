@@ -22,6 +22,7 @@ global $data;
 </title>
 <link rel="stylesheet"  href="/orgeccl/assets/css/bootstrap.css" type="text/css" media="screen"/>
 <link rel="stylesheet"  href="/orgeccl/assets/css/style.css" type="text/css" media="screen"/>
+<link rel="icon" type="image/x-icon" href="/orgeccl/assets/images/icon.ico">
 <!--[if lte IE 8]>
 <link rel="stylesheet"  href="menuie.css" type="text/css" media="screen"/>
 <link rel="stylesheet"  href="vmenuie.css" type="text/css" media="screen"/>
@@ -134,7 +135,7 @@ Designed With TemplateToaster
 </div>
 <a href="http://www.facebook.com/TemplateToaster" class="ttr_footer_facebook" target="_self" >
 </a>
-<a href="http://twitter.com/templatetoaster"class="ttr_footer_twitter" target="_self" >
+<a href="http://twitter.com/templatetoaster" class="ttr_footer_twitter" target="_self" >
 </a>
 <a href="http://www.templatetoaster.com"class="ttr_footer_googleplus" target="_self" >
 </a>
