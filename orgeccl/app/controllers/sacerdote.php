@@ -1,7 +1,7 @@
 <?php
 require '../app/models/sacerdote.php';
 
-function controller_sacerdote_home()
+function controller_sacerdote_index()
 {
     view_render_html();
 }
@@ -20,7 +20,7 @@ function controller_sacerdote_ricerca()
 }
 function controller_sacerdote_diaconi()
 {
-    $IdSacerdote = isset($_GET['IdSacerdote'])?$_GET['IdSacerdote']:'21';
+    $IdSacerdote = isset($_GET['IdSacerdote'])?$_GET['IdSacerdote']:NULL;
 
     global $data;
     $data['rows'] = model_sacerdote_diaconi($IdSacerdote);

@@ -3,7 +3,7 @@
     $sacerdoti = $data['rows'];
 ?>
 
-<span><a HREF="/orgeccl/sacerdote/home" target="_self" class="btn btn-md btn-default">Torna alla home</a></span><br/>
+<span><a HREF="/orgeccl/sacerdote/index" target="_self" class="btn btn-md btn-default">Torna alla home</a></span><br/>
 
 <div id="ttr_content_and_sidebar_container">
     <div id="ttr_content">
@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-8">
-                                            <span><a HREF="/orgeccl/sacerdote/diaconi" class="btn btn-md btn-default">Invia</a></span>
+                                            <input type="submit" value="Inserisci" class="btn btn-md btn-default" onclick="submit()" />
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>

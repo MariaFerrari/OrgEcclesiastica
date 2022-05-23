@@ -1,7 +1,7 @@
 <?php
 require '../app/models/vescovo.php';
 
-function controller_vescovo_home()
+function controller_vescovo_index()
 {
     view_render_html();
 }
@@ -19,10 +19,13 @@ function controller_vescovo_ricerca()
 }
 function controller_vescovo_funzioni()
 {
-    $dataOra = isset($_GET['dataOra'])?$_GET['dataOra']:'2022-06-04';
-    $IdVescovo = isset($_GET['IdVescovo'])?$_GET['IdVescovo']:'2';
+    $dataOra = isset($_GET['dataOra'])?$_GET['dataOra']:NULL;
+    $IdVescovo = isset($_GET['IdVescovo'])?$_GET['IdVescovo']:0;
 
-    global $data;
-    $data['rows'] = model_vescovo_funzioni($dataOra, $IdVescovo);
-    view_render_html();
+    if($dataOra){
+        global $data;
+        $data['rows'] = model_vescovo_funzioni($dataOra, $IdVescovo);
+        view_render_html();
+    }
+    else header("Location: /orgeccl/vescovo/ricerca");
 }
