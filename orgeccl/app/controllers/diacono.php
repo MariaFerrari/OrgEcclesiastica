@@ -50,3 +50,9 @@ function controller_diacono_persona($id)
     $data['rows'] = model_diacono_persona($id);
     view_render_html();
 }
+function controller_diacono_funzVescovo($id)
+{
+    global $data;
+    $data['rows'] = model_diacono_funzVescovo($id);
+    view_render_html();
+}

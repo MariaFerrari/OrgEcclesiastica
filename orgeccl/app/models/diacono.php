@@ -106,3 +106,17 @@ function model_diacono_persona($idPersona){
 
   return $data;
 }
+
+function model_diacono_funzVescovo($idVescovo){
+  $conn=db_connect();
+
+  $sql="SELECT p.IdParrocchia,p.Nome, COUNT(f.IdFunzione) as NumeroFunzioni FROM `funzione` f inner join parrocchia p On f.IdParrocchia=p.IdParrocchia WHERE IdVescovo=$idVescovo GROUP BY IdVescovo, GiornoOra, IdParrocchia";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC);
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}

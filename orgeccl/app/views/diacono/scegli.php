@@ -1,20 +1,29 @@
 <?php
   global $data;
-  $vescovi = $data['rows'];
+  $ris = $data['rows'];
 ?>
-<h3>Selezionare un vescovo per visualizzare il numero delle funzioni celebrate da lui nelle diverse parrocchie</h3><br/><br/>
-<form action="<?=$data['base_path'];?>/diacono/funzvesc" method="get">
-<label for="IdVescovo">Seleziona un Vescovo</label><br/>
-<select name="IdVescovo" required>
-    <option value="0"> --selezionare vescovo </option>
-    <?php
-    foreach($vescovi as $row)
-    { 
-    ?>
-        <option value="<?=$row['IdVescovo']?>"> <?=$row['Nome']?>  <?=$row['Cognome']?></option>
-    <?php
-    }
-    ?>
-</select><br/><br/><br/><br/>
-<input type="submit" value="Visualizza">
-</form>
+
+<span><a HREF="<?=$data['base_path'];?>/diacono/index" target="_self" class="btn btn-md btn-default">Torna alla home</a></span><br/>
+
+<p style="margin:0.36em 0em 1.43em 0em;"><span style="font-family:'Abel','Arial';font-size:1.714em;">Selezionare un vescovo per visualizzare il numero delle funzioni celebrate da lui nelle diverse parrocchie</span></p>
+<table border="solid #black">
+  <tr>
+    <th>Id Vescovo</th>
+    <th>Nome Vescovo</th>
+    <th>Cognome Vescovo</th>
+  </tr>
+
+<?php
+  foreach ($ris as $row) 
+  {
+?>
+    <tr>
+    <td><?=$row['IdVescovo'];?></td>
+    <td><?=$row['Nome'];?></td>
+    <td><?=$row['Cognome'];?></td>
+    <td><a href="<?=$data['base_path'];?>/diacono/funzVescovo/<?=$row['IdVescovo'];?>">Scegli Vescovo</a></td>
+    <td><a href="<?=$data['base_path'];?>/diacono/vescovo/<?=$row['IdVescovo'];?>">Dettagli Vescovo</a></td>
+    </tr>
+<?php
+  }?>
+</table>
