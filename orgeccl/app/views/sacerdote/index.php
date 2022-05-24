@@ -1,5 +1,5 @@
 <p style="margin:0.36em 0em 1.43em 0em;">
-    <span style="font-family:'Abel','Arial';font-size:1.714em;">Home - Sacerdote</span>
+    <span style="font-family:'Abel','Arial';font-size:1.714em;"></span>
 </p>
 <p style="margin:0.36em 0em 0.71em 0em;line-height:2.11267605633803;">
     <div class="post_column col-lg-6 col-md-12 col-sm-12 col-xs-12">

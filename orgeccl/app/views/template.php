@@ -73,9 +73,19 @@ global $data;
                      <li class="ttr_menu_items_parent dropdown active"><a href="<?= $data['base_path']; ?>/home/about" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>About Us</a>
                         <hr class="horiz_separator" />
                      </li>
+                     <?php 
+                     if(session_status()===PHP_SESSION_NONE) session_start();
+                     if(key_exists('ruolo', $_SESSION)){?>
+                        <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']."/".$_SESSION['ruolo']."/index"; ?>" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Area utente</a>
+                        <hr class="horiz_separator" />
+                     <?php }
+                     else{
+                        session_abort();
+                        ?>
                      <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']; ?>/home/login" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>LogIn</a>
                         <hr class="horiz_separator" />
                      </li>
+                     <?php }?>
                      </li>
                   </ul>
                </div>
@@ -94,13 +104,14 @@ global $data;
                         <?= $data['page_name']; ?>
                      </span>
                   </p>
-                  <?php if (array_key_exists('href', $data)) { ?>
+                  <?php if (array_key_exists('href', $data)) { 
+                     foreach($data['href'] as $btn){?>
                      <p style="margin:0.36em 0em 0.36em 0em;text-align:Center;line-height:1.97183098591549;">
                         <span>
-                           <a href="<?= $data['href']['link'] ?>" target="_self" class="btn btn-md btn-default"><?= $data['href']['text'] ?></a>
+                           <a href="<?= $btn['link'] ?>" target="_self" class="btn btn-md btn-default"><?= $btn['text'] ?></a>
                         </span>
                      </p>
-                  <?php } ?>
+                  <?php }} ?>
                </div>
             </div>
             <div class="ttr_headershape02">

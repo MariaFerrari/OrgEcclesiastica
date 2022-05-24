@@ -13,23 +13,10 @@
                     <div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>
                     <div class="html_content">
                         <p style="margin:0.36em 0em 2.86em 0em;text-align:Center;">
-                            <span style="font-family:'Abel','Arial';font-size:2.143em;">INSERISCI IL TUO NOMINATIVO E LA DATA</span>
+                            <span style="font-family:'Abel','Arial';font-size:2.143em;">INSERISCI LA DATA</span>
                         </p>
                         <p style="text-align:Center;">
                             <form id="ContactForm0" class="form-horizontal" action="/orgeccl/vescovo/funzioni" method="get" style="padding:0px 0px 0px 0px;margin: 0 auto;">
-                                <div class="form-group">
-                                    <select name="IdVescovo" required>
-                                        <option value="0"> --selezionare il proprio profilo </option>
-                                        <?php
-                                        foreach($vescovi as $row)
-                                        { 
-                                        ?>
-                                            <option value="<?=$row['IdVescovo']?>"> <?=$row['Nome']?>  <?=$row['Cognome']?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label required">Data</label>
                                     <div class="col-sm-8">

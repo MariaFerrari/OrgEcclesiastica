@@ -14,7 +14,8 @@ function controller_diocesi_info($params){
   $parrocchie=model_diocesi_parrocchie($id);
   $data['rows']=array("details"=>$details, "parrocchie"=>$parrocchie);
   $data['page_title'] = $data['page_name'] = $data['rows']['details']['Nome'];
-  $data['href']['link'] = $data['base_path'] . "/diocesi/all";
-  $data['href']['text'] = "TUTTE LE DIOCESI";
+  $data['href'] = array(
+    array('link' => $data['base_path'] . "/diocesi/all", 'text' => "TUTTE LE DIOCESI"),
+  );
   view_render_html();
 }

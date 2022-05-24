@@ -9,13 +9,12 @@
                     <div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>
                     <div class="html_content">
                         <p style="margin:0.36em 0em 2.86em 0em;text-align:Center;">
-                            <span style="font-family:'Abel','Arial';font-size:2.143em;">INSERISCI IL TUO NOMINATIVO E LA DATA</span>
+                            <span style="font-family:'Abel','Arial';font-size:2.143em;">LOGIN</span>
                         </p>
                         <p style="text-align:Center;">
-                            <form id="ContactForm0" class="form-horizontal" action="/orgeccl/home/index" method="post" style="padding:0px 0px 0px 0px;margin: 0 auto;">
+                            <form id="ContactForm0" class="form-horizontal" action="/orgeccl/home/check" method="post" style="padding:0px 0px 0px 0px;margin: 0 auto;">
                                 <div class="form-group">
-                                    <input type="text" id="nome" name="nome" placeholder="nome"/>
-                                    <input type="text" id="cognome" name="cognome" placeholder="cognome"/>
+                                    <input type="text" id="user" name="user" placeholder="nome utente"/>
                                     <input type="password" id="pw" name="pw" placeholder="password"/>
                                 </div>
                                 <div class="form-group">

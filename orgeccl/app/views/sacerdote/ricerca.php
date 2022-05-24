@@ -13,7 +13,7 @@
                     <div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;"></div>
                     <div class="html_content">
                         <p style="margin:0.36em 0em 2.86em 0em;text-align:Center;">
-                                <span style="font-family:'Abel','Arial';font-size:2.143em;">INSERISCI IL TUO NOMINATIVO</span>
+                                <span style="font-family:'Abel','Arial';font-size:2.143em;">INSERISCI IL NOMINATIVO</span>
                             </p>
                             <p style="text-align:Center;">
                                 <form id="ContactForm0" class="form-horizontal" role="form" method="get" action="/orgeccl/sacerdote/diaconi" style="padding:0px 0px 0px 0px;margin: 0 auto;">
