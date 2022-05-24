@@ -133,3 +133,17 @@ function model_diacono_vescovo($idVescovo){
 
   return $data;
 }
+
+function model_diacono_parrocchieSole(){
+  $conn=db_connect();
+
+  $sql="SELECT p.IdParrocchia, p.Nome, d.Nome as NomeDiocesi, c.Nome AS Comune, c.Provincia FROM parrocchia p INNER JOIN diocesi d ON p.IdDiocesi=d.IdDiocesi INNER JOIN comune c ON  p.IdComune=c.IdComune WHERE IdParrocchia NOT IN (SELECT DISTINCT p.IdParrocchia FROM celebrazione c INNER JOIN funzione f on c.IdFunzione=f.IdFunzione INNER JOIN parrocchia p ON f.IdParrocchia=p.IdParrocchia WHERE c.IdSacerdote NOT IN (SELECT afs.IdSacerdote FROM celebrazione c INNER JOIN funzione f ON f.IdFunzione=c.IdFunzione INNER JOIN affidamento_sacerdotale afs ON afs.IdParrocchia=f.IdParrocchia ORDER BY afs.IdSacerdote))";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC);
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}
