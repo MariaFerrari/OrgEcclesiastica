@@ -3,9 +3,9 @@
   $ris = $data['rows'];
 ?>
 
-<span><a HREF="<?=$data['base_path'];?>/diacono/index" target="_self" class="btn btn-md btn-default">Torna alla home</a></span><br/>
+<span><a HREF="<?=$data['base_path'];?>/diacono/index" target="_self" class="btn btn-md btn-default">Torna alla home</a><a HREF="<?=$data['base_path'];?>/diacono/personeGenNoParrocchia/<?=$ris['IdParrocchia'];?>" target="_self" class="btn btn-md btn-default">Torna alle persone</a></span><br/>
 
-<p style="margin:0.36em 0em 1.43em 0em;"><span style="font-family:'Abel','Arial';font-size:1.714em;">Dettagli Persona</span></p>
+<p style="margin:0.36em 0em 1.43em 0em;"><span style="font-family:'Abel','Arial';font-size:1.714em;">Dettagli di <?=$ris['Nome'];?> <?=$ris['Cognome'];?></span></p>
 <table border="solid #black">
   <tr>
     <th>Id Persona</th>
@@ -32,6 +32,7 @@
     </tr>
 </table>
 <br/><br/>
+<p style="margin:0.36em 0em 1.43em 0em;"><span style="font-family:'Abel','Arial';font-size:1.714em;">Dettagli Genitori</span></p>
 <table border="solid #black">
   <tr>
     <th>Id Padre</th>
@@ -59,4 +60,3 @@
     <td><?=$ris['ParrocchiaMadre'];?></td>
     </tr>
 </table>
-<span><a HREF="<?=$data['base_path'];?>/diacono/personeGenNoParrocchia/<?=$ris['IdParrocchia'];?>" target="_self" class="btn btn-md btn-default">Torna alle persone</a></span><br/>

@@ -8,9 +8,9 @@
 <p style="margin:0.36em 0em 1.43em 0em;"><span style="font-family:'Abel','Arial';font-size:1.714em;">Selezionare un vescovo per visualizzare il numero delle funzioni celebrate da lui nelle diverse parrocchie</span></p>
 <table border="solid #black">
   <tr>
-    <th>Id Vescovo</th>
     <th>Nome Vescovo</th>
     <th>Cognome Vescovo</th>
+    <th colspan=2>Operazioni</th>
   </tr>
 
 <?php
@@ -18,7 +18,6 @@
   {
 ?>
     <tr>
-    <td><?=$row['IdVescovo'];?></td>
     <td><?=$row['Nome'];?></td>
     <td><?=$row['Cognome'];?></td>
     <td><a href="<?=$data['base_path'];?>/diacono/funzVescovo/<?=$row['IdVescovo'];?>">Scegli Vescovo</a></td>
