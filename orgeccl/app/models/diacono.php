@@ -120,3 +120,16 @@ function model_diacono_funzVescovo($idVescovo){
 
   return $data;
 }
+function model_diacono_vescovo($idVescovo){
+  $conn=db_connect();
+
+  $sql="SELECT * FROM vescovo WHERE IdVescovo=$idVescovo";
+
+  $result=$conn->query($sql);
+  $data=$result->fetch_all(MYSQLI_ASSOC)[0];
+
+  $result->free();
+  $conn->close();
+
+  return $data;
+}

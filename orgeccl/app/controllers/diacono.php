@@ -56,3 +56,9 @@ function controller_diacono_funzVescovo($id)
     $data['rows'] = model_diacono_funzVescovo($id);
     view_render_html();
 }
+function controller_diacono_vescovo($id)
+{
+    global $data;
+    $data['rows'] = model_diacono_vescovo($id);
+    view_render_html();
+}
