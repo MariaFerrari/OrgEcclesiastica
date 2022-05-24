@@ -11,7 +11,7 @@ $diocesi = $data['rows'];
 <?php
 foreach ($diocesi['parrocchie'] as $parr) {
   $c=1;
-  $src = "C:\\Users\\UTENTE\\Desktop\\SCUOLA\\UniServerZ\\www\\orgeccl\\assets\\images\\6.jpg";
+  $src = "/orgeccl/assets/images/8.jpg";
   if ($c % 3 == 1) {
 ?>
     <div style="height:0px;width:0px;overflow:hidden;-webkit-margin-top-collapse: separate;">

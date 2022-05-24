@@ -72,14 +72,9 @@ global $data;
                      <li class="ttr_menu_items_parent dropdown active"><a href="<?= $data['base_path']; ?>/home/about" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>About Us</a>
                         <hr class="horiz_separator" />
                      </li>
-                     <li class="ttr_menu_items_parent dropdown"><a href="gallery.html" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Gallery</a>
+                     <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']; ?>/home/login" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>LogIn</a>
                         <hr class="horiz_separator" />
                      </li>
-                     <li class="ttr_menu_items_parent dropdown"><a href="sermons.html" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Sermons</a>
-                        <hr class="horiz_separator" />
-                     </li>
-                     <li class="ttr_menu_items_parent dropdown"><a href="contact.html" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Contact</a>
-                        <hr class="horiz_separator" />
                      </li>
                   </ul>
                </div>
