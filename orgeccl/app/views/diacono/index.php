@@ -75,7 +75,7 @@ global $data;
             <div class="html_content"style="height:430px;width:275px">
                 <p style="margin:0.36em 0em 2.14em 0em;text-align:Center;">
                     <span class="ttr_image" style="float:none;display:block;text-align:center;overflow:hidden;margin:0em 0em 2.86em 0em;">
-                        <span><img class="ttr_uniform" src="/orgeccl/assets/images/sacerdote-01.png" style="max-width:800px;max-height:120px;" /></span>
+                        <span><img class="ttr_uniform" src="/orgeccl/assets/images/obispo-01.png" style="max-width:800px;max-height:120px;" /></span>
                     </span>
                     <span style="font-family:'Abel','Arial';font-size:1.429em;">FUNZIONI VESCOVO IN UNA PARROCCHIA</span>
                 </p>

@@ -18,7 +18,7 @@ function model_home_check($info){
   if(count($data)==0) $login['logged']="Errore: username non valido";
   else {
     $data=$data[0];
-    if ($data['Password']!=$pw) $login['logged']="Errore: password errata";
+    if (hash('sha256', $pw)!= $data['Password']) $login['logged']="Errore: password errata";
     else {
       $login['ruolo']=$data['Ruolo'];
       if($data['IdVescovo']!=null) $login['user'] = $data['IdVescovo'];

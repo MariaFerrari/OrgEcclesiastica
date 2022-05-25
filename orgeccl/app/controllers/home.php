@@ -1,5 +1,6 @@
 <?php
 require_once '../app/models/home.php';
+
 function controller_home_index()
 {
     global $data;
@@ -7,6 +8,7 @@ function controller_home_index()
     $data['href'] = array(
         array('link' => $data['base_path'] . "/diocesi/all", 'text' => "TUTTE LE DIOCESI"),
     );
+    session_start();
     view_render_html();
 }
 
@@ -17,13 +19,13 @@ function controller_home_about()
     $data['href'] = array(
         array('link' => $data['base_path'] . "/diocesi/all", 'text' => "TUTTE LE DIOCESI"),
     );
+    session_start();
     view_render_html();
 }
 
 function controller_home_login($params=null)
 {
     global $data;
-    var_dump($params);
     $data['page_name'] = $data['page_title'];
     $data['href'] = array(
         array('link' => $data['base_path'] . "/diocesi/all", 'text' => "TUTTE LE DIOCESI"),
@@ -32,7 +34,7 @@ function controller_home_login($params=null)
         echo '<script> alert("Errore nel login. Controllare che username e password siano ok"); </script>';
     }
     view_render_html();
-            }
+}
 function controller_home_check()
 {
     $login = model_home_check($_POST); //login=>{["logged"]=>true/messaggio, ["ruolo"]=>ruolo, [idUser]=>idDiacono/Sac/Vesc}
@@ -45,4 +47,8 @@ function controller_home_check()
     else {
         header('Location: /orgeccl/home/login/err');
     }
+}
+function controller_home_logout(){
+    session_abort();
+    header('Location: /orgeccl/home/login');
 }

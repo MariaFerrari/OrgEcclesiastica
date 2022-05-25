@@ -1,13 +1,16 @@
 <?php
 require_once '../app/models/diocesi.php';
+
 function controller_diocesi_all()
 {
   global $data;
   $data['page_title'] = $data['page_name']="Tutte le diocesi";
   $data['rows']=model_diocesi_all();
+  session_start();
   view_render_html();
 }
-function controller_diocesi_info($params){
+function controller_diocesi_info($params)
+{
   global $data;
   $id=$params[0];
   $details=model_diocesi_details($id);
@@ -17,5 +20,6 @@ function controller_diocesi_info($params){
   $data['href'] = array(
     array('link' => $data['base_path'] . "/diocesi/all", 'text' => "TUTTE LE DIOCESI"),
   );
+  session_start();
   view_render_html();
 }

@@ -6,36 +6,36 @@ global $data;
 <html>
 
 <head>
-<meta charset="utf-8">
-<script type="text/javascript" src="/orgeccl/assets/js/jquery.js">
-</script>
-<script type="text/javascript" src="/orgeccl/assets/js/jquery-ui.min.js">
-</script>
-<script type="text/javascript" src="/orgeccl/assets/js/bootstrap.min.js">
-</script>
-<script type="text/javascript" src="/orgeccl/assets/js/Customjs.js">
-</script>
-<script type="text/javascript" src="/orgeccl/assets/js/contactform.js">
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>
-<?php echo $data['page_title']; ?>
-</title>
-<link rel="stylesheet"  href="/orgeccl/assets/css/bootstrap.css" type="text/css" media="screen"/>
-<link rel="stylesheet"  href="/orgeccl/assets/css/style.css" type="text/css" media="screen"/>
-<link rel="icon" type="image/x-icon" href="/orgeccl/assets/images/icon.ico">
-<!--[if lte IE 8]>
+   <meta charset="utf-8">
+   <script type="text/javascript" src="/orgeccl/assets/js/jquery.js">
+   </script>
+   <script type="text/javascript" src="/orgeccl/assets/js/jquery-ui.min.js">
+   </script>
+   <script type="text/javascript" src="/orgeccl/assets/js/bootstrap.min.js">
+   </script>
+   <script type="text/javascript" src="/orgeccl/assets/js/Customjs.js">
+   </script>
+   <script type="text/javascript" src="/orgeccl/assets/js/contactform.js">
+   </script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>
+      <?php echo $data['page_title']; ?>
+   </title>
+   <link rel="stylesheet" href="/orgeccl/assets/css/bootstrap.css" type="text/css" media="screen" />
+   <link rel="stylesheet" href="/orgeccl/assets/css/style.css" type="text/css" media="screen" />
+   <link rel="icon" type="image/x-icon" href="/orgeccl/assets/images/icon.ico">
+   <!--[if lte IE 8]>
 <link rel="stylesheet"  href="menuie.css" type="text/css" media="screen"/>
 <link rel="stylesheet"  href="vmenuie.css" type="text/css" media="screen"/>
 <![endif]-->
-<script type="text/javascript" src="/orgeccl/assets/js/totop.js">
-</script>
-<!--[if IE 7]>
+   <script type="text/javascript" src="/orgeccl/assets/js/totop.js">
+   </script>
+   <!--[if IE 7]>
 <style type="text/css" media="screen">
 #ttr_vmenu_items  li.ttr_vmenu_items_parent {margin-left:-16px;font-size:0px;}
 </style>
 <![endif]-->
-<!--[if lt IE 9]>
+   <!--[if lt IE 9]>
 <script type="text/javascript" src="/orgeccl/assets/js/html5shiv.js">
 </script>
 <script type="text/javascript" src="/orgeccl/assets/js/respond.min.js">
@@ -73,19 +73,29 @@ global $data;
                      <li class="ttr_menu_items_parent dropdown active"><a href="<?= $data['base_path']; ?>/home/about" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>About Us</a>
                         <hr class="horiz_separator" />
                      </li>
-                     <?php 
-                     if(session_status()===PHP_SESSION_NONE) session_start();
-                     if(key_exists('ruolo', $_SESSION)){?>
-                        <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']."/".$_SESSION['ruolo']."/index"; ?>" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Area utente</a>
-                        <hr class="horiz_separator" />
-                     <?php }
-                     else{
-                        session_abort();
+                     <?php
+                     if (session_status() == PHP_SESSION_ACTIVE) {
+                        if (key_exists('ruolo', $_SESSION)) { ?>
+                           <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path'] . "/" . $_SESSION['ruolo'] . "/index"; ?>" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Area utente</a>
+                              <hr class="horiz_separator" />
+                           <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path'] . "/home/logout"; ?>" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>Log out</a>
+                              <hr class="horiz_separator" />
+                           <?php
+                        } else {
+                           ?>
+                           <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']; ?>/home/login" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>LogIn</a>
+                              <hr class="horiz_separator" />
+                           </li>
+                        <?php
+                        }
+                        } else
+                        {
                         ?>
-                     <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']; ?>/home/login" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>LogIn</a>
-                        <hr class="horiz_separator" />
-                     </li>
-                     <?php }?>
+                        <li class="ttr_menu_items_parent dropdown"><a href="<?= $data['base_path']; ?>/home/login" class="ttr_menu_items_parent_link"><span class="menuchildicon"></span>LogIn</a>
+                           <hr class="horiz_separator" />
+                        </li>
+                     <?php
+                     } ?>
                      </li>
                   </ul>
                </div>
@@ -104,14 +114,15 @@ global $data;
                         <?= $data['page_name']; ?>
                      </span>
                   </p>
-                  <?php if (array_key_exists('href', $data)) { 
-                     foreach($data['href'] as $btn){?>
-                     <p style="margin:0.36em 0em 0.36em 0em;text-align:Center;line-height:1.97183098591549;">
-                        <span>
-                           <a href="<?= $btn['link'] ?>" target="_self" class="btn btn-md btn-default"><?= $btn['text'] ?></a>
-                        </span>
-                     </p>
-                  <?php }} ?>
+                  <?php if (array_key_exists('href', $data)) {
+                     foreach ($data['href'] as $btn) { ?>
+                        <p style="margin:0.36em 0em 0.36em 0em;text-align:Center;line-height:1.97183098591549;">
+                           <span>
+                              <a href="<?= $btn['link'] ?>" target="_self" class="btn btn-md btn-default"><?= $btn['text'] ?></a>
+                           </span>
+                        </p>
+                  <?php }
+                  } ?>
                </div>
             </div>
             <div class="ttr_headershape02">
@@ -193,4 +204,5 @@ global $data;
          })();
       </script>
 </body>
+
 </html>

@@ -10,6 +10,7 @@ function login()
 }
 function controller_diacono_index()
 {
+  login();
   view_render_html();
 }
 function controller_diacono_scegli()

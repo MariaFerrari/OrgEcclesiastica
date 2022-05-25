@@ -30,7 +30,7 @@ if ((int)function_exists($controller_function)) {
     call_user_func_array($controller_function, $params);
 } 
 else {
-    view_render_html("404");
+    header("Location: /orgeccl/error/404");
 }
 
 function view_render_html($view = '')
