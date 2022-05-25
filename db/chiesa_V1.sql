@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Mag 24, 2022 alle 11:01
--- Versione del server: 8.0.23
--- Versione PHP: 8.0.3
+-- Creato il: Mag 25, 2022 alle 16:46
+-- Versione del server: 8.0.18
+-- Versione PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `affidamento_diaconale` (
-  `IdAffDiac` int NOT NULL,
-  `IdDiacono` int NOT NULL,
-  `IdParrocchia` int NOT NULL,
+  `IdAffDiac` int(11) NOT NULL,
+  `IdDiacono` int(11) NOT NULL,
+  `IdParrocchia` int(11) NOT NULL,
   `DataInizio` date NOT NULL,
   `DataFine` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -88,9 +88,9 @@ INSERT INTO `affidamento_diaconale` (`IdAffDiac`, `IdDiacono`, `IdParrocchia`, `
 --
 
 CREATE TABLE `affidamento_monastico` (
-  `IdAffMon` int NOT NULL,
-  `IdOrdMon` int NOT NULL,
-  `IdParrocchia` int NOT NULL,
+  `IdAffMon` int(11) NOT NULL,
+  `IdOrdMon` int(11) NOT NULL,
+  `IdParrocchia` int(11) NOT NULL,
   `DataInizio` date NOT NULL,
   `DataFine` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -102,8 +102,8 @@ CREATE TABLE `affidamento_monastico` (
 --
 
 CREATE TABLE `affidamento_sacerdotale` (
-  `IdSacerdote` int NOT NULL,
-  `IdParrocchia` int NOT NULL,
+  `IdSacerdote` int(11) NOT NULL,
+  `IdParrocchia` int(11) NOT NULL,
   `DataInizio` date NOT NULL,
   `DataFine` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -148,8 +148,8 @@ INSERT INTO `affidamento_sacerdotale` (`IdSacerdote`, `IdParrocchia`, `DataInizi
 (32, 14, '2012-01-04', '2018-01-12'),
 (77, 14, '1990-06-14', '2013-12-16'),
 (84, 14, '2020-07-21', NULL),
-(14, 15, '2012-07-03', '2008-01-02'),
-(25, 15, '2021-05-12', '2022-03-24'),
+(14, 15, '2000-07-03', '2008-01-02'),
+(25, 15, '2011-05-12', '2022-03-24'),
 (47, 15, '2004-02-04', '2007-09-09'),
 (52, 16, '1998-11-24', '2018-10-05');
 
@@ -160,8 +160,8 @@ INSERT INTO `affidamento_sacerdotale` (`IdSacerdote`, `IdParrocchia`, `DataInizi
 --
 
 CREATE TABLE `assistenza` (
-  `IdDiacono` int NOT NULL,
-  `IdFunzione` int NOT NULL
+  `IdDiacono` int(11) NOT NULL,
+  `IdFunzione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -169,16 +169,12 @@ CREATE TABLE `assistenza` (
 --
 
 INSERT INTO `assistenza` (`IdDiacono`, `IdFunzione`) VALUES
-(1, 2),
-(2, 2),
-(3, 2),
 (3, 5),
 (3, 8),
 (3, 13),
 (1, 16),
 (2, 24),
 (1, 31),
-(2, 46),
 (3, 46),
 (2, 48),
 (3, 48),
@@ -191,8 +187,8 @@ INSERT INTO `assistenza` (`IdDiacono`, `IdFunzione`) VALUES
 --
 
 CREATE TABLE `celebrazione` (
-  `IdSacerdote` int NOT NULL,
-  `IdFunzione` int NOT NULL
+  `IdSacerdote` int(11) NOT NULL,
+  `IdFunzione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -224,7 +220,7 @@ INSERT INTO `celebrazione` (`IdSacerdote`, `IdFunzione`) VALUES
 (14, 23),
 (61, 24),
 (19, 25),
-(5, 26),
+(41, 26),
 (56, 27),
 (77, 28),
 (18, 29),
@@ -256,15 +252,15 @@ INSERT INTO `celebrazione` (`IdSacerdote`, `IdFunzione`) VALUES
 (77, 55),
 (43, 56),
 (64, 57),
-(22, 58),
-(40, 59),
-(90, 60),
-(6, 61),
-(39, 62),
+(14, 58),
+(47, 59),
+(14, 60),
+(15, 61),
+(47, 62),
 (15, 63),
 (58, 64),
 (65, 65),
-(6, 66),
+(15, 66),
 (15, 67),
 (79, 68),
 (19, 69),
@@ -273,13 +269,13 @@ INSERT INTO `celebrazione` (`IdSacerdote`, `IdFunzione`) VALUES
 (64, 72),
 (12, 73),
 (99, 74),
-(19, 75),
+(38, 75),
 (68, 76),
 (14, 77),
 (16, 78),
 (15, 79),
 (78, 80),
-(9, 81),
+(14, 81),
 (34, 82),
 (27, 83),
 (40, 84),
@@ -287,13 +283,13 @@ INSERT INTO `celebrazione` (`IdSacerdote`, `IdFunzione`) VALUES
 (80, 86),
 (28, 87),
 (12, 88),
-(19, 89),
+(24, 89),
 (11, 90),
 (88, 91),
 (78, 92),
 (21, 93),
 (12, 94),
-(21, 95),
+(15, 95),
 (33, 96);
 
 -- --------------------------------------------------------
@@ -303,8 +299,8 @@ INSERT INTO `celebrazione` (`IdSacerdote`, `IdFunzione`) VALUES
 --
 
 CREATE TABLE `comando` (
-  `IdVescovo` int NOT NULL,
-  `IdDiocesi` int NOT NULL,
+  `IdVescovo` int(11) NOT NULL,
+  `IdDiocesi` int(11) NOT NULL,
   `DataInizio` date NOT NULL,
   `DataFine` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -324,10 +320,10 @@ INSERT INTO `comando` (`IdVescovo`, `IdDiocesi`, `DataInizio`, `DataFine`) VALUE
 --
 
 CREATE TABLE `comune` (
-  `IdComune` int NOT NULL,
+  `IdComune` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Provincia` varchar(2) NOT NULL,
-  `IdDiocesi` int NOT NULL
+  `IdDiocesi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -392,8 +388,8 @@ INSERT INTO `comune` (`IdComune`, `Nome`, `Provincia`, `IdDiocesi`) VALUES
 --
 
 CREATE TABLE `confine` (
-  `IdDiocesi1` int NOT NULL,
-  `IdDiocesi2` int NOT NULL
+  `IdDiocesi1` int(11) NOT NULL,
+  `IdDiocesi2` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -403,7 +399,7 @@ CREATE TABLE `confine` (
 --
 
 CREATE TABLE `diacono` (
-  `IdDiacono` int NOT NULL,
+  `IdDiacono` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Cognome` varchar(50) NOT NULL,
   `DataN` date NOT NULL,
@@ -411,7 +407,7 @@ CREATE TABLE `diacono` (
   `DataM` date DEFAULT NULL,
   `IsEmerito` tinyint(1) NOT NULL DEFAULT '0',
   `IsPermanente` tinyint(1) NOT NULL,
-  `IdRito` int NOT NULL
+  `IdRito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -430,7 +426,7 @@ INSERT INTO `diacono` (`IdDiacono`, `Nome`, `Cognome`, `DataN`, `LuogoN`, `DataM
 --
 
 CREATE TABLE `diocesi` (
-  `IdDiocesi` int NOT NULL,
+  `IdDiocesi` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `KmQ` decimal(7,2) NOT NULL,
   `Tipo` enum('Cattolica','Ortodossa') NOT NULL
@@ -457,12 +453,12 @@ INSERT INTO `diocesi` (`IdDiocesi`, `Nome`, `KmQ`, `Tipo`) VALUES
 --
 
 CREATE TABLE `funzione` (
-  `IdFunzione` int NOT NULL,
+  `IdFunzione` int(11) NOT NULL,
   `GiornoOra` datetime NOT NULL,
   `Tipo` enum('Feriale','Domenicale','Pasquale','Natalizia','Festiva altro','Rito') NOT NULL,
-  `IdParrocchia` int NOT NULL,
-  `IdVescovo` int DEFAULT NULL,
-  `IdRito` int DEFAULT NULL
+  `IdParrocchia` int(11) NOT NULL,
+  `IdVescovo` int(11) DEFAULT NULL,
+  `IdRito` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -531,13 +527,13 @@ INSERT INTO `funzione` (`IdFunzione`, `GiornoOra`, `Tipo`, `IdParrocchia`, `IdVe
 (60, '2022-05-04 18:00:00', 'Feriale', 15, NULL, NULL),
 (61, '2022-05-05 18:00:00', 'Feriale', 15, NULL, NULL),
 (62, '2022-05-06 18:00:00', 'Feriale', 15, NULL, NULL),
-(63, '2022-05-09 18:00:00', 'Feriale', 15, NULL, NULL),
-(64, '2022-05-10 18:00:00', 'Feriale', 15, NULL, NULL),
-(65, '2022-05-11 18:00:00', 'Feriale', 15, NULL, NULL),
+(63, '2022-05-09 18:00:00', 'Feriale', 12, NULL, NULL),
+(64, '2022-05-10 18:00:00', 'Feriale', 13, NULL, NULL),
+(65, '2022-05-11 18:00:00', 'Feriale', 7, NULL, NULL),
 (66, '2022-05-12 18:00:00', 'Feriale', 15, NULL, NULL),
 (67, '2022-05-13 18:00:00', 'Feriale', 15, NULL, NULL),
-(68, '2022-05-14 18:00:00', 'Feriale', 15, NULL, NULL),
-(69, '2022-05-15 18:00:00', 'Feriale', 15, NULL, NULL),
+(68, '2022-05-14 18:00:00', 'Feriale', 7, NULL, NULL),
+(69, '2022-05-15 18:00:00', 'Feriale', 6, NULL, NULL),
 (70, '2022-04-17 10:00:00', 'Pasquale', 3, NULL, NULL),
 (71, '2022-04-17 10:00:00', 'Pasquale', 3, NULL, NULL),
 (72, '2022-04-17 10:00:00', 'Pasquale', 4, NULL, NULL),
@@ -564,7 +560,15 @@ INSERT INTO `funzione` (`IdFunzione`, `GiornoOra`, `Tipo`, `IdParrocchia`, `IdVe
 (93, '2021-12-25 10:00:00', 'Natalizia', 13, NULL, NULL),
 (94, '2021-12-25 10:00:00', 'Natalizia', 14, NULL, NULL),
 (95, '2021-12-25 10:00:00', 'Natalizia', 15, NULL, NULL),
-(96, '2021-12-25 10:00:00', 'Natalizia', 16, NULL, NULL);
+(96, '2021-12-25 10:00:00', 'Natalizia', 16, NULL, NULL),
+(97, '2022-06-04 16:30:00', 'Rito', 12, 2, 51),
+(98, '2022-06-04 16:30:00', 'Rito', 12, 2, 52),
+(99, '2022-06-04 16:30:00', 'Rito', 12, 2, 53),
+(100, '2022-06-04 16:30:00', 'Rito', 12, 2, 54),
+(101, '2022-06-04 16:30:00', 'Rito', 12, 2, 55),
+(102, '2022-06-04 16:30:00', 'Rito', 12, 2, 56),
+(103, '2022-06-04 18:30:00', 'Feriale', 5, 2, NULL),
+(104, '2022-06-04 10:30:00', 'Feriale', 6, 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -573,8 +577,8 @@ INSERT INTO `funzione` (`IdFunzione`, `GiornoOra`, `Tipo`, `IdParrocchia`, `IdVe
 --
 
 CREATE TABLE `impartizione` (
-  `IdRito` int NOT NULL,
-  `IdPersona` int NOT NULL
+  `IdRito` int(11) NOT NULL,
+  `IdPersona` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -641,7 +645,7 @@ INSERT INTO `impartizione` (`IdRito`, `IdPersona`) VALUES
 --
 
 CREATE TABLE `ordine_monastico` (
-  `IdOrdMon` int NOT NULL,
+  `IdOrdMon` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Cognome` varchar(50) NOT NULL,
   `DataN` date NOT NULL,
@@ -656,14 +660,14 @@ CREATE TABLE `ordine_monastico` (
 --
 
 CREATE TABLE `parrocchia` (
-  `IdParrocchia` int NOT NULL,
+  `IdParrocchia` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Lunghezza` decimal(5,2) NOT NULL,
   `Larghezza` decimal(5,2) NOT NULL,
   `Altezza` decimal(5,2) NOT NULL,
-  `DataCostruzione` int NOT NULL,
-  `IdDiocesi` int NOT NULL,
-  `IdComune` int NOT NULL
+  `DataCostruzione` int(11) NOT NULL,
+  `IdDiocesi` int(11) NOT NULL,
+  `IdComune` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -692,8 +696,8 @@ INSERT INTO `parrocchia` (`IdParrocchia`, `Nome`, `Lunghezza`, `Larghezza`, `Alt
 --
 
 CREATE TABLE `partecipazione` (
-  `IdOrdMon` int NOT NULL,
-  `IdFunzione` int NOT NULL
+  `IdOrdMon` int(11) NOT NULL,
+  `IdFunzione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -703,16 +707,16 @@ CREATE TABLE `partecipazione` (
 --
 
 CREATE TABLE `persona` (
-  `IdPersona` int NOT NULL,
+  `IdPersona` int(11) NOT NULL,
   `CodF` varchar(16) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Cognome` varchar(50) NOT NULL,
   `Sesso` enum('M','F') NOT NULL,
   `DataN` date NOT NULL,
   `CittaN` text NOT NULL,
-  `Padre` int DEFAULT NULL,
-  `Madre` int DEFAULT NULL,
-  `IdParrocchia` int NOT NULL
+  `Padre` int(11) DEFAULT NULL,
+  `Madre` int(11) DEFAULT NULL,
+  `IdParrocchia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -865,7 +869,7 @@ INSERT INTO `persona` (`IdPersona`, `CodF`, `Nome`, `Cognome`, `Sesso`, `DataN`,
 (143, 'TCVYXB27I07J895H', 'Jay', 'Adkins', 'M', '2007-12-28', 'Mander', 50, 48, 11),
 (144, 'ZJKIUI83S77B188F', 'Robinet', 'Lukianovich', 'F', '1988-12-13', 'Młynary', 5, 25, 15),
 (145, 'EZIDBR83B99U397K', 'Scarface', 'Broad', 'M', '2019-02-22', 'Bojawa', 45, 2, 15),
-(146, 'AUNMZO44T94L995O', 'Stephine', 'Moyles', 'F', '1991-05-22', 'Langgen', 28, 28, 12),
+(146, 'AUNMZO44T94L995O', 'Stephine', 'Moyles', 'F', '1991-05-22', 'Langgen', 15, 54, 12),
 (147, 'YOSDNA18I62L202E', 'Rolland', 'Konertz', 'M', '2011-11-24', 'Rudong', 33, 9, 13),
 (148, 'SZBMJT19I80G447N', 'Cathrine', 'Howbrook', 'F', '2008-08-18', 'Tallkalakh', 29, 7, 9),
 (149, 'GSTUFI23H60D810S', 'Eduino', 'Yeskin', 'M', '2003-11-16', 'Dingjiaqiao', 7, 46, 14),
@@ -878,8 +882,8 @@ INSERT INTO `persona` (`IdPersona`, `CodF`, `Nome`, `Cognome`, `Sesso`, `DataN`,
 --
 
 CREATE TABLE `presenza` (
-  `IdPersona` int NOT NULL,
-  `IdFunzione` int NOT NULL
+  `IdPersona` int(11) NOT NULL,
+  `IdFunzione` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1156,12 +1160,12 @@ INSERT INTO `presenza` (`IdPersona`, `IdFunzione`) VALUES
 --
 
 CREATE TABLE `rito` (
-  `IdRito` int NOT NULL,
+  `IdRito` int(11) NOT NULL,
   `Tipo` enum('Battesimo','Confessione','Eucarestia','Cresima','Matrimonio','Estrema unzione','Funerale','Ordine episcopale','Ordine presbiterato','Ordine diaconato') NOT NULL,
-  `Testimone1` int DEFAULT NULL,
-  `Testimone2` int DEFAULT NULL,
-  `Testimone3` int DEFAULT NULL,
-  `Testimone4` int DEFAULT NULL
+  `Testimone1` int(11) DEFAULT NULL,
+  `Testimone2` int(11) DEFAULT NULL,
+  `Testimone3` int(11) DEFAULT NULL,
+  `Testimone4` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1218,7 +1222,13 @@ INSERT INTO `rito` (`IdRito`, `Tipo`, `Testimone1`, `Testimone2`, `Testimone3`, 
 (47, 'Funerale', NULL, NULL, NULL, NULL),
 (48, 'Funerale', NULL, NULL, NULL, NULL),
 (49, 'Estrema unzione', NULL, NULL, NULL, NULL),
-(50, 'Funerale', NULL, NULL, NULL, NULL);
+(50, 'Funerale', NULL, NULL, NULL, NULL),
+(51, 'Cresima', 7, NULL, NULL, NULL),
+(52, 'Cresima', 9, NULL, NULL, NULL),
+(53, 'Cresima', 44, NULL, NULL, NULL),
+(54, 'Cresima', 12, NULL, NULL, NULL),
+(55, 'Cresima', 10, NULL, NULL, NULL),
+(56, 'Cresima', 18, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1227,14 +1237,14 @@ INSERT INTO `rito` (`IdRito`, `Tipo`, `Testimone1`, `Testimone2`, `Testimone3`, 
 --
 
 CREATE TABLE `sacerdote` (
-  `IdSacerdote` int NOT NULL,
+  `IdSacerdote` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Cognome` varchar(50) NOT NULL,
   `DataN` date NOT NULL,
   `LuogoN` varchar(50) NOT NULL,
   `DataM` date DEFAULT NULL,
   `IsEmerito` tinyint(1) NOT NULL DEFAULT '0',
-  `IdRito` int NOT NULL
+  `IdRito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1351,10 +1361,19 @@ CREATE TABLE `utente` (
   `Username` varchar(100) NOT NULL,
   `Password` varchar(256) NOT NULL,
   `Ruolo` enum('sacerdote','vescovo','diacono','') NOT NULL,
-  `IdSacerdote` int DEFAULT NULL,
-  `IdVescovo` int DEFAULT NULL,
-  `IdDiacono` int DEFAULT NULL
+  `IdSacerdote` int(11) DEFAULT NULL,
+  `IdVescovo` int(11) DEFAULT NULL,
+  `IdDiacono` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dump dei dati per la tabella `utente`
+--
+
+INSERT INTO `utente` (`Username`, `Password`, `Ruolo`, `IdSacerdote`, `IdVescovo`, `IdDiacono`) VALUES
+('adriano.cevolotto', '6b86a44cfaad40c226c2724c0138d78ea864bdbc3e7a72267e749d1749dcccee', 'vescovo', NULL, 2, NULL),
+('angelofiorenzo.bertolotti', '0eadfdffe9ac1a48e01952131c8edec35a11dca735547d8e78e63b57b24e96f2', 'sacerdote', 21, NULL, NULL),
+('ciro.andolfo', 'd8b7ca5e0baa218902138f93030ce1c5e5610a145e228ded3b95821d58230525', 'diacono', NULL, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -1363,14 +1382,14 @@ CREATE TABLE `utente` (
 --
 
 CREATE TABLE `vescovo` (
-  `IdVescovo` int NOT NULL,
+  `IdVescovo` int(11) NOT NULL,
   `Nome` varchar(50) NOT NULL,
   `Cognome` varchar(50) NOT NULL,
   `DataN` date NOT NULL,
   `LuogoN` varchar(50) NOT NULL,
   `DataM` date DEFAULT NULL,
   `IsEmerito` tinyint(1) NOT NULL DEFAULT '0',
-  `IdRito` int NOT NULL
+  `IdRito` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -1536,15 +1555,6 @@ ALTER TABLE `sacerdote`
   ADD KEY `IdRito` (`IdRito`);
 
 --
--- Indici per le tabelle `utente`
---
-ALTER TABLE `utente`
-  ADD PRIMARY KEY (`Username`),
-  ADD KEY `IdDiacono` (`IdDiacono`),
-  ADD KEY `IdSacerdote` (`IdSacerdote`),
-  ADD KEY `IdVescovo` (`IdVescovo`);
-
---
 -- Indici per le tabelle `vescovo`
 --
 ALTER TABLE `vescovo`
@@ -1559,73 +1569,73 @@ ALTER TABLE `vescovo`
 -- AUTO_INCREMENT per la tabella `affidamento_diaconale`
 --
 ALTER TABLE `affidamento_diaconale`
-  MODIFY `IdAffDiac` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `IdAffDiac` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT per la tabella `affidamento_monastico`
 --
 ALTER TABLE `affidamento_monastico`
-  MODIFY `IdAffMon` int NOT NULL AUTO_INCREMENT;
+  MODIFY `IdAffMon` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `comune`
 --
 ALTER TABLE `comune`
-  MODIFY `IdComune` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `IdComune` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT per la tabella `diacono`
 --
 ALTER TABLE `diacono`
-  MODIFY `IdDiacono` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `IdDiacono` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT per la tabella `diocesi`
 --
 ALTER TABLE `diocesi`
-  MODIFY `IdDiocesi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdDiocesi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT per la tabella `funzione`
 --
 ALTER TABLE `funzione`
-  MODIFY `IdFunzione` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `IdFunzione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT per la tabella `ordine_monastico`
 --
 ALTER TABLE `ordine_monastico`
-  MODIFY `IdOrdMon` int NOT NULL AUTO_INCREMENT;
+  MODIFY `IdOrdMon` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT per la tabella `parrocchia`
 --
 ALTER TABLE `parrocchia`
-  MODIFY `IdParrocchia` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `IdParrocchia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT per la tabella `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `IdPersona` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `IdPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT per la tabella `rito`
 --
 ALTER TABLE `rito`
-  MODIFY `IdRito` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `IdRito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT per la tabella `sacerdote`
 --
 ALTER TABLE `sacerdote`
-  MODIFY `IdSacerdote` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `IdSacerdote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT per la tabella `vescovo`
 --
 ALTER TABLE `vescovo`
-  MODIFY `IdVescovo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdVescovo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Limiti per le tabelle scaricate
@@ -1736,14 +1746,6 @@ ALTER TABLE `rito`
 --
 ALTER TABLE `sacerdote`
   ADD CONSTRAINT `sacerdote_ibfk_1` FOREIGN KEY (`IdRito`) REFERENCES `rito` (`IdRito`) ON DELETE RESTRICT ON UPDATE RESTRICT;
-
---
--- Limiti per la tabella `utente`
---
-ALTER TABLE `utente`
-  ADD CONSTRAINT `utente_ibfk_1` FOREIGN KEY (`IdDiacono`) REFERENCES `diacono` (`IdDiacono`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `utente_ibfk_2` FOREIGN KEY (`IdSacerdote`) REFERENCES `sacerdote` (`IdSacerdote`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  ADD CONSTRAINT `utente_ibfk_3` FOREIGN KEY (`IdVescovo`) REFERENCES `vescovo` (`IdVescovo`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 --
 -- Limiti per la tabella `vescovo`
