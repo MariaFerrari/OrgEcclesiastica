@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="OrganizzazioneEcclesiastica" company="" webLink="http://" view-date="2022-03-19" view-index="0" gantt-divider-location="269" resource-divider-location="300" version="2.8.11" locale="it">
+    <description/>
+    <view zooming-state="default:3" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="146" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="60" order="1"/>
+        <field id="tpd5" name="Data di fine" width="59" order="2"/>
+        <option id="color.recent"><![CDATA[#ffff00 #ffff33 #ffcc00 #ff6600 #ff0033 #99ff99 #ff9900 #33ff33 #cc66ff #0066ff]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="210" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="14" name="Analisi" color="#0066ff" meeting="false" start="2022-03-21" duration="10" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+            <task id="2" name="Analisi dei requisiti" color="#0066ff" meeting="false" start="2022-03-21" duration="5" complete="0" thirdDate="2022-04-04" thirdDate-constraint="0" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+                <depend id="11" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="5" name="Analisi gerarchia aziendale" color="#0066ff" meeting="false" start="2022-03-21" duration="3" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="8" name="Specifiche del software" color="#0066ff" meeting="false" start="2022-03-26" duration="5" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="18" type="2" difference="0" hardness="Strong"/>
+                <depend id="19" type="2" difference="0" hardness="Strong"/>
+                <depend id="26" type="2" difference="0" hardness="Strong"/>
+                <depend id="29" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="11" name="CPM" color="#0066ff" meeting="false" start="2022-03-26" duration="1" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="16" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="16" name="Gantt" color="#0066ff" meeting="false" start="2022-03-28" duration="1" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true">
+                <depend id="78" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="18" name="Progettazione" color="#cc66ff" meeting="false" start="2022-04-01" duration="5" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true">
+            <task id="19" name="P. concettuale DB" color="#cc66ff" meeting="false" start="2022-04-01" duration="4" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="23" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="23" name="P. logica DB" color="#cc66ff" meeting="false" start="2022-04-06" duration="1" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                <depend id="47" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="26" name="Mockup interfaccia" color="#cc66ff" meeting="false" start="2022-04-01" duration="3" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true">
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="29" name="Scelta linguaggi" color="#cc66ff" meeting="false" start="2022-04-01" duration="1" complete="0" thirdDate="2022-04-01" thirdDate-constraint="0" expand="true">
+                <depend id="31" type="2" difference="0" hardness="Strong"/>
+                <depend id="39" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="31" name="Scelta framework" color="#cc66ff" meeting="false" start="2022-04-02" duration="2" complete="0" thirdDate="2022-04-02" thirdDate-constraint="0" expand="true">
+                <depend id="35" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="35" name="Scelta librerie" color="#cc66ff" meeting="false" start="2022-04-05" duration="1" complete="0" thirdDate="2022-04-05" thirdDate-constraint="0" expand="true">
+                <depend id="44" type="2" difference="0" hardness="Strong"/>
+                <depend id="79" type="2" difference="0" hardness="Strong"/>
+                <depend id="84" type="2" difference="0" hardness="Strong"/>
+                <depend id="106" type="2" difference="0" hardness="Strong"/>
+                <depend id="107" type="2" difference="0" hardness="Strong"/>
+                <depend id="108" type="2" difference="0" hardness="Strong"/>
+                <depend id="110" type="2" difference="0" hardness="Strong"/>
+                <depend id="111" type="2" difference="0" hardness="Strong"/>
+                <depend id="112" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="40" name="Sviluppo" color="#33ff33" meeting="false" start="2022-04-05" duration="12" complete="0" thirdDate="2022-04-05" thirdDate-constraint="0" expand="true">
+            <task id="39" name="Sviluppo interfaccia" color="#33ff33" meeting="false" start="2022-04-05" duration="6" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="56" type="2" difference="0" hardness="Strong"/>
+                <depend id="60" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="44" name="MVC-pubblica" color="#99ff99" meeting="false" start="2022-04-06" duration="11" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="56" type="2" difference="0" hardness="Strong"/>
+                <depend id="60" type="2" difference="0" hardness="Strong"/>
+                <task id="79" name="Modello" color="#99ff99" meeting="false" start="2022-04-06" duration="7" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                    <depend id="87" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="84" name="Vista" color="#99ff99" meeting="false" start="2022-04-06" duration="4" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                    <depend id="87" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="87" name="Controller" color="#99ff99" meeting="false" start="2022-04-14" duration="4" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="106" name="MVC-diacono&amp;monaco" color="#99ff99" meeting="false" start="2022-04-06" duration="11" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                <depend id="56" type="2" difference="0" hardness="Strong"/>
+                <depend id="60" type="2" difference="0" hardness="Strong"/>
+                <task id="107" name="Modello" color="#99ff99" meeting="false" start="2022-04-06" duration="7" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                    <depend id="109" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="108" name="Vista" color="#99ff99" meeting="false" start="2022-04-06" duration="4" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                    <depend id="109" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="109" name="Controller" color="#99ff99" meeting="false" start="2022-04-14" duration="4" complete="0" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="110" name="MVC-sacerdote&amp;vescovo" color="#99ff99" meeting="false" start="2022-04-06" duration="11" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                <depend id="56" type="2" difference="0" hardness="Strong"/>
+                <depend id="60" type="2" difference="0" hardness="Strong"/>
+                <task id="111" name="Modello" color="#99ff99" meeting="false" start="2022-04-06" duration="7" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                    <depend id="113" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="112" name="Vista" color="#99ff99" meeting="false" start="2022-04-06" duration="4" complete="0" thirdDate="2022-04-06" thirdDate-constraint="0" expand="true">
+                    <depend id="113" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="113" name="Controller" color="#99ff99" meeting="false" start="2022-04-14" duration="4" complete="0" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="47" name="Realizzazione DB" color="#33ff33" meeting="false" start="2022-04-07" duration="2" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <depend id="50" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="50" name="Popolamento DB" color="#33ff33" meeting="false" start="2022-04-09" duration="4" complete="0" thirdDate="2022-04-09" thirdDate-constraint="0" expand="true">
+                <depend id="65" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="54" name="Testing" color="#ffff00" meeting="false" start="2022-04-14" duration="10" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+            <depend id="67" type="2" difference="0" hardness="Strong"/>
+            <depend id="69" type="2" difference="0" hardness="Strong"/>
+            <depend id="71" type="2" difference="0" hardness="Strong"/>
+            <task id="56" name="Bug tracking" color="#ffff33" meeting="false" start="2022-04-20" duration="5" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true">
+                <task id="98" name="Interfaccia" color="#ffff33" meeting="false" start="2022-04-20" duration="5" complete="0" thirdDate="2022-04-05" thirdDate-constraint="0" expand="true"/>
+                <task id="105" name="Backend" color="#ffff33" meeting="false" start="2022-04-20" duration="5" complete="0" thirdDate="2022-04-18" thirdDate-constraint="0" expand="true"/>
+            </task>
+            <task id="60" name="Miglioramenti" color="#ffff00" meeting="false" start="2022-04-19" duration="2" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true"/>
+            <task id="65" name="Test DB" color="#ffff00" meeting="false" start="2022-04-14" duration="3" complete="0" thirdDate="2022-04-14" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="67" name="Dispiegamento" color="#ff6600" meeting="false" start="2022-04-26" duration="4" complete="0" thirdDate="2022-04-26" thirdDate-constraint="0" expand="true">
+            <depend id="76" type="2" difference="0" hardness="Strong"/>
+            <task id="69" name="Hosting applicazione" color="#ff6600" meeting="false" start="2022-04-26" duration="2" complete="0" thirdDate="2022-05-05" thirdDate-constraint="0" expand="true"/>
+            <task id="71" name="Formazione utenti" color="#ff6600" meeting="false" start="2022-04-26" duration="4" complete="0" thirdDate="2022-05-05" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="76" name="Conclusione" color="#ff0033" meeting="false" start="2022-04-30" duration="3" complete="0" thirdDate="2022-04-30" thirdDate-constraint="0" expand="true">
+            <task id="78" name="Verifica obiettivi" color="#ff0033" meeting="false" start="2022-04-30" duration="3" complete="0" thirdDate="2022-04-30" thirdDate-constraint="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Project Manager"/>
+        <role id="2" name="Programmatore"/>
+        <role id="3" name="Jolly"/>
+    </roles>
+</project>
