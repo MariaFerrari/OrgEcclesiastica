@@ -24,3 +24,5 @@
     <td><?=$ris['NomeRito'];?></td>
 </tr>
 </table>
+<br/>
+<br/>

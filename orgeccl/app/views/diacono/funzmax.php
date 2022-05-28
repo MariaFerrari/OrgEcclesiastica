@@ -26,3 +26,5 @@
     <td><a href="<?=$data['base_path'];?>/diacono/funzione/<?=$ris['IdFunzione'];?>">Dettagli Funzione</a></td>
 </tr>
 </table>
+<br/>
+<br/>
