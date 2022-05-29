@@ -21,7 +21,7 @@ foreach ($values as $diocesi) {
               </a>
             </span>
             <br />
-            <?= $diocesi['Nome'] ?>
+            <?= count(explode("diocesi di", strtolower($diocesi['Nome'])))>1?$diocesi['Nome']:"Diocesi di ".$diocesi['Nome']; ?>
             <br />
           </span>
         </p>
