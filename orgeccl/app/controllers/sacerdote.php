@@ -1,5 +1,6 @@
 <?php
 require '../app/models/sacerdote.php';
+$data['page_title']=$data['page_name']="Sacerdote";
 
 function login(){
     session_start();
@@ -15,7 +16,6 @@ function controller_sacerdote_index()
     $data['href'] = array(
         array('link' => $data['base_path'] . "/diacono/index", 'text' => "Altre funzioni - diacono"),
     );
-    $data['page_title']=$data['page_name']="Sacerdote";
     view_render_html();
 }
 function controller_sacerdote_all($pagina)

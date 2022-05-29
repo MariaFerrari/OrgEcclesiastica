@@ -25,6 +25,7 @@ function controller_home_about()
 
 function controller_home_login($params=null)
 {
+    session_start();
     global $data;
     $data['page_name'] = $data['page_title'];
     $data['href'] = array(
@@ -49,6 +50,7 @@ function controller_home_check()
     }
 }
 function controller_home_logout(){
-    session_abort();
+    session_start();
+    session_destroy();
     header('Location: /orgeccl/home/login');
 }

@@ -16,7 +16,7 @@
                             <span style="font-family:'Abel','Arial';font-size:2.143em;">INSERISCI LA DATA</span>
                         </p>
                         <p style="text-align:Center;">
-                            <form id="ContactForm0" class="form-horizontal" action="/orgeccl/vescovo/funzioni" method="get" style="padding:0px 0px 0px 0px;margin: 0 auto;">
+                            <form id="ContactForm0" class="form-horizontal" action="/orgeccl/vescovo/funzioni" method="post" style="padding:0px 0px 0px 0px;margin: 0 auto;">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label required">Data</label>
                                     <div class="col-sm-8">
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-4 col-sm-offset-8">
-                                        <input type="submit" value="Inserisci" class="btn btn-md btn-default" onclick="submit()" />
+                                        <input type="submit" value="Cerca" class="btn btn-md btn-default" onclick="submit()" />
                                     </div>
                                 </div>
                             </form>
