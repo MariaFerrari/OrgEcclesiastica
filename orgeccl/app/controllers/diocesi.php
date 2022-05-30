@@ -12,7 +12,7 @@ function controller_diocesi_all()
 function controller_diocesi_info($params)
 {
   global $data;
-  $id=$params[0];
+  $id=$params;
   $details=model_diocesi_details($id);
   $parrocchie=model_diocesi_parrocchie($id);
   $data['rows']=array("details"=>$details, "parrocchie"=>$parrocchie);
