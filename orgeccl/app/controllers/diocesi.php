@@ -16,7 +16,7 @@ function controller_diocesi_info($params)
   $details=model_diocesi_details($id);
   $parrocchie=model_diocesi_parrocchie($id);
   $data['rows']=array("details"=>$details, "parrocchie"=>$parrocchie);
-  $data['page_title'] = $data['page_name'] = $data['rows']['details']['Nome'];
+  $data['page_title'] = $data['page_name'] = count(explode("diocesi di", strtolower($data['rows']['details']['Nome'])))>1? $data['rows']['details']['Nome']:"Diocesi di ". $data['rows']['details']['Nome'];
   $data['href'] = array(
     array('link' => $data['base_path'] . "/diocesi/all", 'text' => "TUTTE LE DIOCESI"),
   );

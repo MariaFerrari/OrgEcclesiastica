@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-4 col-sm-offset-8">
-                                            <input type="submit" value="Inserisci" class="btn btn-md btn-default" onclick="submit()" />
+                                            <input type="submit" value="Cerca" class="btn btn-md btn-default" onclick="submit()" />
                                         </div>
                                     </div>
                                     <div class="clearfix"></div>

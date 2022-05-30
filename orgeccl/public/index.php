@@ -18,7 +18,7 @@ function render_body(){
 $data = array();
 $data['base_path'] = "/orgeccl";
 $data['page_title'] = "Organizzazione Ecclesiastica";
-$data['page_name'] = $controller . ' - ' . $action;
+$data['page_name'] = $controller;
 
 $include_file = "../app/controllers/$controller.php";
 if(file_exists($include_file))

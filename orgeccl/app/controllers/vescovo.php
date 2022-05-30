@@ -1,5 +1,6 @@
 <?php
 require '../app/models/vescovo.php';
+$data['page_title']=$data['page_name']="Vescovo";
 
 function login()
 {
@@ -49,7 +50,7 @@ function controller_vescovo_funzioni()
         array('link' => $data['base_path'] . "/diacono/index", 'text' => "Altre funzioni - diacono"),
         array('link' => $data['base_path'] . "/sacerdote/index", 'text' => "Altre funzioni - sacerdote")
     );
-    $dataOra = isset($_GET['dataOra'])?$_GET['dataOra']:NULL;
+    $dataOra = isset($_POST['dataOra'])?$_POST['dataOra']:NULL;
 
     if($dataOra){
         $data['rows'] = model_vescovo_funzioni($dataOra, $_SESSION['user']);

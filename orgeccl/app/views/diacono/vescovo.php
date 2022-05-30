@@ -24,3 +24,5 @@
     <td><?=($ris['IsEmerito'] == 0)?'NO':'SI';?></td>
 </tr>
 </table>
+<br/>
+<br/>

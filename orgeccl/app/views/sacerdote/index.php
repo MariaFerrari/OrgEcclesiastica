@@ -1,5 +1,5 @@
 <p style="margin:0.36em 0em 1.43em 0em;">
-    <span style="font-family:'Abel','Arial';font-size:1.714em;"></span>
+    <span style="font-family:'Abel','Arial';font-size:1.714em;">Home - Sacerdote</span>
 </p>
 <p style="margin:0.36em 0em 0.71em 0em;line-height:2.11267605633803;">
     <div class="post_column col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -11,8 +11,8 @@
                         <span><img class="ttr_uniform" src="/orgeccl/assets/images/diacono-01.png" style="max-width:800px;max-height:120px" /></span>
                     </span>
                     <span style="font-family:'Abel','Arial';font-size:1.429em;">RICERCA DIACONI</span>
-                    </p>
-                    <p style="margin:0.36em 0em 1.43em 0em;text-align:Center;line-height:2.11267605633803;">
+                </p>
+                <p style="margin:0.36em 0em 1.43em 0em;text-align:Center;line-height:2.11267605633803;height: 59px;">
                     <span style="font-family:'Abel','Arial';font-size:1.143em;">Ricerca i diaconi con cui hai celebrato almeno 2 funzioni.</span></p><p style="margin:0.36em 0em 0em 0em;text-align:Center;line-height:2.11267605633803;">
                     <span><a HREF="/orgeccl/sacerdote/ricerca" target="_self" class="btn btn-md btn-default">Vai alla pagina</a></span>
                 </p>
@@ -32,7 +32,7 @@
                     </span>
                     <span style="font-family:'Abel','Arial';font-size:1.429em;">VISUALIZZA SACERDOTI</span>
                 </p>
-                <p style="margin:0.36em 0em 2.14em 0em;text-align:Center;line-height:2.11267605633803;">
+                <p style="margin:0.36em 0em 1.43em 0em;text-align:Center;line-height:2.11267605633803;height: 59px;">
                     <span style="font-family:'Abel','Arial';font-size:1.143em;">Visualizza tutti i sacerdoti.</span></p><p style="margin:0.36em 0em 0em 0em;text-align:Center;line-height:2.11267605633803;">
                     <span><a HREF="/orgeccl/sacerdote/all/1" target="_self" class="btn btn-md btn-default">Vai alla pagina</a></span>
                 </p>

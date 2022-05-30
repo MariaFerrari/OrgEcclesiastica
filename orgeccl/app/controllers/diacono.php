@@ -1,5 +1,6 @@
 <?php
 require '../app/models/diacono.php';
+$data['page_title']=$data['page_name']="Diacono";
 
 function login()
 {

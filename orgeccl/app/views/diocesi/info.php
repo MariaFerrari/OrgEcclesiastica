@@ -4,11 +4,12 @@ $diocesi = $data['rows'];
 ?>
 <p>
 <h3>Diocesi <?= $diocesi['details']['Tipo'] ?></h3>
-<h5>Superficie: <?= $diocesi['details']['KmQ'] ?> Kmq</h5>
+<h4>Superficie: <?= $diocesi['details']['KmQ'] ?> Kmq</h4>
 </p>
 <hr />
 <h2>Parrocchie</h2>
 <?php
+if(count($diocesi['parrocchie'])==0) echo "<h4>Le parrocchie di questa diocesi non sono ancora state censite</h4>";
 foreach ($diocesi['parrocchie'] as $parr) {
   $c=1;
   $src = "/orgeccl/assets/images/8.jpg";
